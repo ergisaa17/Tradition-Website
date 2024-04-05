@@ -298,6 +298,11 @@ html.has-scroll-dragging {
   top: 0;
   z-index: 9;
 }
+.navbar .custom-menu ul li a,
+.navbar .site-menu ul li a {
+  color: white;
+  font-weight: 700;
+}
 .navbar.light,
 .navbar.light .custom-menu ul li a,
 .navbar.light .site-menu ul li a {
@@ -422,6 +427,9 @@ html.has-scroll-dragging {
 /* PAGE LOADED */
 .page-loaded .preloader {
   top: 100%;
+}
+.preloader svg path {
+  fill: var(--secondary-color);
 }
 .page-loaded .preloader .inner {
   transform: translateY(50px);
