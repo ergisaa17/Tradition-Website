@@ -64,7 +64,7 @@ a:hover {
 }
 html.has-scroll-smooth,
 .has-scroll-smooth body {
-  overflow: hidden;
+overflow-x: hidden;
 }
 html.has-scroll-dragging {
   user-select: none;
@@ -129,63 +129,6 @@ html.has-scroll-dragging {
   position: relative;
   z-index: 1;
 }
-/* 1.1 */
-.preloader {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  overflow: hidden;
-}
-.preloader .inner {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  animation: preloader-inner 0.8s ease 0.8s;
-}
-.preloader .inner figure {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-bottom: 0;
-}
-.preloader .inner figure img {
-  height: 90px;
-}
-.preloader .inner small {
-  width: 100%;
-  display: block;
-  color: #fff;
-  font-family: 'Cinzel', serif;
-  font-size: 18px;
-  text-align: center;
-  margin-top: 15px;
-}
-.preloader .inner .progress-bar {
-  background: none;
-}
-.preloader svg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  fill: var(--secondary-color);
-}
-.preloader svg path {
-  animation: preloader-svg 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86) paused forwards;
-}
 /* 1.2 */
 .page-transition {
   width: 100%;
@@ -244,7 +187,7 @@ html.has-scroll-dragging {
   position: absolute;
   right: 0;
   top: 0;
-  fill: #080808;
+  fill: var(--secondary-color);
 }
 .side-widget.active svg path,
 .side-widget svg path {
@@ -400,14 +343,6 @@ html.has-scroll-dragging {
   transform: rotate(-45deg) translate(-15px, 0px);
 }
 /* BEFORE PAGE LOADED */
-.navbar {
-  transform: translateY(-100%);
-  transition-duration: 0.7s;
-  -webkit-transition-duration: 0.7s;
-  transition-timing-function: cubic-bezier(0.86, 0, 0.09, 1);
-  -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.09, 1);
-  transition-delay: 0.20s;
-}
 .slider,
 .page-header {
   transition-property: transform, opacity;
@@ -419,28 +354,6 @@ html.has-scroll-dragging {
 .slider,
 .page-header {
   transform: scale(1.4);
-}
-/* PAGE LOADED */
-.page-loaded .preloader {
-  top: 100%;
-}
-.preloader svg path {
-  fill: var(--secondary-color);
-}
-.page-loaded .preloader .inner {
-  transform: translateY(50px);
-  opacity: 0;
-}
-.page-loaded .preloader svg path {
-  animation-play-state: running;
-}
-.page-loaded .navbar {
-  transform: translateY(0);
-}
-.page-loaded .slider,
-.page-loaded .page-header {
-  transform: scale(1);
-  opacity: 1;
 }
 /* 1.5 */
 .video-container {
